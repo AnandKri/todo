@@ -52,10 +52,11 @@ app.get("/todo", async (req,res)=>{
 app.delete("/todo/:id", async (req,res)=>{
     try {
         const {id} = req.params
-        const query = 'SELECT * FROM todo WHERE todo_id = $1'
+        const query = 'DELETE FROM todo WHERE todo_id = $1'
         values = [id]
         const result = await pool.query(query, values)
         res.status(200).json({
+            data:result,
             message: 'Task deleted successfully'
         })
     } catch (error) {
