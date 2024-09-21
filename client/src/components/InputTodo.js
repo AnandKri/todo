@@ -30,20 +30,21 @@ const InputTodo = () => {
     }
 
     return (
-        <>
-            <h1 className="text-center mt-5">PERN Todo List</h1>
-            <form className="d-flex mx-5" onSubmit={onSubmitForm}>
-                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="form-control" placeholder="Input Task Name"/>
-                {/* <input value={status} onChange={e => setStatus(e.target.value)} type="text" className="form-control" placeholder="Input Task Status"/> */}
-                <select onChange={e => setStatus(e.target.value)}>
+        <div className="py-10 px-5 text-center">
+            <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">Todo Application</h1>
+            <div className="text-center block">
+            <form className="flex mr-auto ml-auto w-1/2" onSubmit={onSubmitForm}>
+                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="mx-2 form-control" placeholder="Input Task Name"/>
+                <select className="mx-2 rounded-md px-3 bg-green-800 text-white" onChange={e => setStatus(e.target.value)}>
                     <option value="Pending">Pending</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
-                <input value="Add" className="btn btn-success" type="submit"/>
+                <input value="Add" className="mx-2 btn btn-success  bg-green-800 text-white" type="submit"/>
             </form>
+            </div> 
             <ListTodos update={update}/>
-        </>
+        </div>
     )
 }
 

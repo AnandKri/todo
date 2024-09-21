@@ -66,11 +66,10 @@ const ListTodos = ({update}) => {
 
     return (
         <>
-        <h1 className="text-center mt-5">List of Tasks</h1>
-        {/* <div>{console.log(result)}</div> */}
+        <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">List of Tasks</h1>
         <ul>
             {result && result.map((data)=>(
-                <li key={data.todo_id}>
+                <li  key={data.todo_id}>
                     {editMode === data.todo_id ? (
                         <div>
                             <input
@@ -90,7 +89,7 @@ const ListTodos = ({update}) => {
                         </div>
                     ) : (
                         <div>
-                        <strong>Description :</strong> {data.description}
+                        <strong className="font-mono text-xl tracking-tight text-left">Description :</strong> {data.description}
                         <strong>Status :</strong> {data.status}
                         <button onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
                         <button onClick={() => handleDelete(data.todo_id)}>Delete</button>
