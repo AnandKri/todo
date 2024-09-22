@@ -88,12 +88,29 @@ const ListTodos = ({update}) => {
                             <button onClick={()=>{setEditMode(null)}}>Cancel</button>
                         </div>
                     ) : (
-                        <div>
-                        <strong className="font-mono text-xl tracking-tight text-left">Description :</strong> {data.description}
+                        <>
+                        <div className="flex flex-row w-3/4 mx-auto my-4">
+                        
+                            <span className="text-left basis-2/5">
+                                Description : {data.description}
+                            </span>
+
+                            <span className="text-left basis-2/5">
+                                Status : {data.status}
+                            </span>
+
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
+                            
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button>
+                            
+                        
+                        {/* <strong className="font-mono text-xl tracking-tight text-left">Description :</strong> {data.description}
                         <strong>Status :</strong> {data.status}
                         <button onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
-                        <button onClick={() => handleDelete(data.todo_id)}>Delete</button>
+                        <button onClick={() => handleDelete(data.todo_id)}>Delete</button> */}
                         </div>
+                        <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
+                        </>
                     )}
                 </li>
             ))}
