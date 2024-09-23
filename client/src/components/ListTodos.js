@@ -71,22 +71,27 @@ const ListTodos = ({update}) => {
             {result && result.map((data)=>(
                 <li  key={data.todo_id}>
                     {editMode === data.todo_id ? (
-                        <div>
+                        <>
+                        <div className="flex flex-row w-3/4 mx-auto my-4">
                             <input
+                                className="text-left basis-2/5"
                                 type="text"
                                 name="description"
                                 value={updatedData.description}
                                 onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
                             />
                             <input
+                                className="text-left basis-2/5"
                                 type="text"
                                 name="status"
                                 value={updatedData.status}
                                 onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
                             />
-                            <button onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
-                            <button onClick={()=>{setEditMode(null)}}>Cancel</button>
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button>
                         </div>
+                        <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
+                        </>
                     ) : (
                         <>
                         <div className="flex flex-row w-3/4 mx-auto my-4">
