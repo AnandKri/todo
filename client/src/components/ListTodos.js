@@ -66,55 +66,78 @@ const ListTodos = ({update}) => {
 
     return (
         <>
-        <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">List of Tasks</h1>
+        {/* <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">List of Tasks</h1> */}
+        <h1 className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">List of Tasks</h1>
         <ul>
             {result && result.map((data)=>(
                 <li  key={data.todo_id}>
                     {editMode === data.todo_id ? (
                         <>
-                        <div className="flex flex-row w-3/4 mx-auto my-4">
-                            <input
-                                className="text-left basis-2/5"
-                                type="text"
-                                name="description"
-                                value={updatedData.description}
-                                onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
-                            />
-                            <input
-                                className="text-left basis-2/5"
-                                type="text"
-                                name="status"
-                                value={updatedData.status}
-                                onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
-                            />
-                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
-                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button>
+                        {/* <div className="flex flex-row w-3/4 mx-auto my-4"> */}
+                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4">
+                            <div className="border-red-900 border-1">
+                            <span>
+                                Description : 
+                                <input
+                                    // className="text-left basis-2/5"
+                                    className=""
+                                    type="text"
+                                    name="description"
+                                    value={updatedData.description}
+                                    onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
+                                />
+                            </span>
+                            <span className="block">
+                                Status :
+                                <input
+                                    // className="text-left basis-2/5"
+                                    className=""
+                                    type="text"
+                                    name="status"
+                                    value={updatedData.status}
+                                    onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
+                                />
+                            </span>
+                            </div>
+                            <div className="md:my-auto border-red-900 border-1">
+                            <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
+                            <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button>
+                            </div>
                         </div>
-                        <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
+                        {/* <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/> */}
+                        <hr className="w-72 md:w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
                         </>
                     ) : (
                         <>
-                        <div className="flex flex-row w-3/4 mx-auto my-4">
+                        {/* <div className="flex flex-row w-3/4 mx-auto my-4"> */}
+                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4">
                         
-                            <span className="text-left basis-2/5">
+                            {/* <span className="text-left basis-2/5"> */}
+                            <div className="border-red-900 border-1">
+                            <span className="">
                                 Description : {data.description}
                             </span>
 
-                            <span className="text-left basis-2/5">
+                            <span className="block">
                                 Status : {data.status}
                             </span>
+                            </div>
 
-                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
+                            <div className="md:my-auto border-red-900 border-1">
+
+                                {/* <button className="inline-block mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button> */}
+                                <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
+                                
+                                <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button>
                             
-                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button>
-                            
+                            </div>
                         
                         {/* <strong className="font-mono text-xl tracking-tight text-left">Description :</strong> {data.description}
                         <strong>Status :</strong> {data.status}
                         <button onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
                         <button onClick={() => handleDelete(data.todo_id)}>Delete</button> */}
                         </div>
-                        <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
+                        <hr className="w-72 md:w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/>
                         </>
                     )}
                 </li>

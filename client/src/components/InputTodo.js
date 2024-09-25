@@ -31,18 +31,24 @@ const InputTodo = () => {
 
     return (
         <div className="py-10 px-5 text-center">
-            <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">Todo Application</h1>
-            <div className="text-center block">
-            <form className="flex mr-auto ml-auto w-1/2" onSubmit={onSubmitForm}>
-                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="mx-2 form-control" placeholder="Input Task Name"/>
-                <select className="mx-2 rounded-md px-3 bg-green-800 text-white" onChange={e => setStatus(e.target.value)}>
+            {/* <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">Todo Application</h1> */}
+            <div className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">Todo Application</div>
+            {/* <div className="border-red-900 border-1 mx-auto"> */}
+            <form className="border-red-900 border-1 mx-auto md:w-1/2 block w-64" onSubmit={onSubmitForm}>  
+                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="border-red-900 border-1 form-control md:w-1/2  md:inline-block" placeholder="Input Task Name"/>
+                
+                {/* <div className="inline-block"> */}
+                {/* <select className="border-x-red-900 border-4 mx-2 rounded-md px-3 bg-green-800 text-white" onChange={e => setStatus(e.target.value)}> */}
+                <select className="border-red-900 border-1 rounded-md md:inline-block" onChange={e => setStatus(e.target.value)}>
                     <option value="Pending">Pending</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
-                <input value="Add" className="mx-2 btn btn-success  bg-green-800 text-white" type="submit"/>
+                {/* <input value="Add" className="border-x-red-900 border-4 mx-2 px-3 btn btn-success  bg-green-800 text-white" type="submit"/> */}
+                <input value="Add" className="border-red-900 border-1 btn btn-success md:inline-block" type="submit"/>
+                {/* </div> */}
             </form>
-            </div> 
+            {/* </div>  */}
             <ListTodos update={update}/>
         </div>
     )
