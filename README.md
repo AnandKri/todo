@@ -35,10 +35,12 @@ On editing tasks
 
 ### Mobile View
 On creating tasks
-![Mobile View](./application-screenshots/smartphone.png)
+<img src="./application-screenshots/smartphone.png" alt="Mobile View" width="300"/>
+<!-- ![Mobile View](./application-screenshots/smartphone.png) -->
 
 On editing tasks
-![Mobile Edit View](./application-screenshots/smartphone-edit.png)
+<img src="./application-screenshots/smartphone-edit.png" alt="Mobile Edit View" width="300"/>
+<!-- ![Mobile Edit View](./application-screenshots/smartphone-edit.png) -->
 
 
 ---
