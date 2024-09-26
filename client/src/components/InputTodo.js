@@ -32,20 +32,25 @@ const InputTodo = () => {
     return (
         <div className="py-10 px-5 text-center">
             {/* <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">Todo Application</h1> */}
-            <div className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">Todo Application</div>
+            {/* <div className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">Todo Application</div> */}
+            <div className="mx-auto block md:w-1/2 w-64 font-mono md:text-4xl text-3xl font-bold tracking-tight text-green-800 py-4">Todo Application</div>
             {/* <div className="border-red-900 border-1 mx-auto"> */}
-            <form className="border-red-900 border-1 mx-auto md:w-1/2 block w-64" onSubmit={onSubmitForm}>  
-                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="border-red-900 border-1 form-control md:w-1/2  md:inline-block" placeholder="Input Task Name"/>
+            {/* <form className="border-red-900 border-1 mx-auto md:w-1/2 block w-64" onSubmit={onSubmitForm}>   */}
+            <form className="mx-auto md:w-1/2 block w-64 py-2" onSubmit={onSubmitForm}>  
+                {/* <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="border-red-900 border-1 form-control md:w-1/2  md:inline-block" placeholder="Input Task Name"/> */}
+                <input value={description} onChange={e => setDescription(e.target.value)} type="text" className="form-control md:w-1/2 md:inline-block md:mx-1" placeholder="Input Task Name"/>
                 
                 {/* <div className="inline-block"> */}
                 {/* <select className="border-x-red-900 border-4 mx-2 rounded-md px-3 bg-green-800 text-white" onChange={e => setStatus(e.target.value)}> */}
-                <select className="border-red-900 border-1 rounded-md md:inline-block" onChange={e => setStatus(e.target.value)}>
+                {/* <select className="border-red-900 border-1 rounded-md md:inline-block" onChange={e => setStatus(e.target.value)}> */}
+                <select className=" rounded-md md:inline-block bg-green-800 text-white mx-1 px-3 py-2 md:my-0 my-2" onChange={e => setStatus(e.target.value)}>
                     <option value="Pending">Pending</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
                 {/* <input value="Add" className="border-x-red-900 border-4 mx-2 px-3 btn btn-success  bg-green-800 text-white" type="submit"/> */}
-                <input value="Add" className="border-red-900 border-1 btn btn-success md:inline-block" type="submit"/>
+                {/* <input value="Add" className="border-red-900 border-1 btn btn-success md:inline-block" type="submit"/> */}
+                <input value="Add" className="align-baseline btn btn-success md:inline-block bg-green-800 text-white mx-1" type="submit"/>
                 {/* </div> */}
             </form>
             {/* </div>  */}

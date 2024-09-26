@@ -67,31 +67,34 @@ const ListTodos = ({update}) => {
     return (
         <>
         {/* <h1 className="font-mono text-4xl font-bold tracking-tight text-center py-5 text-green-800">List of Tasks</h1> */}
-        <h1 className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">List of Tasks</h1>
+        {/* <h1 className="mx-auto border-red-900 border-1 block md:w-1/2 w-64">List of Tasks</h1> */}
+        <h1 className="mx-auto block md:w-1/2 w-64 font-mono md:text-4xl text-3xl font-bold tracking-tight text-green-800 py-4">List of Tasks</h1>
         <ul>
             {result && result.map((data)=>(
                 <li  key={data.todo_id}>
                     {editMode === data.todo_id ? (
                         <>
                         {/* <div className="flex flex-row w-3/4 mx-auto my-4"> */}
-                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4">
-                            <div className="border-red-900 border-1">
-                            <span>
-                                Description : 
+                        {/* <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4"> */}
+                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto w-72 md:w-3/4 py-2">
+                            {/* <div className="border-red-900 border-1"> */}
+                            <div className="">
+                            <span className="font-mono tracking-tight py-1">
+                                <span className="font-bold">Description : </span> 
                                 <input
                                     // className="text-left basis-2/5"
-                                    className=""
+                                    className="border-green-800 border-1"
                                     type="text"
                                     name="description"
                                     value={updatedData.description}
                                     onChange={(e)=>{setUpdatedData({...updatedData,[e.target.name]:e.target.value})}}
                                 />
                             </span>
-                            <span className="block">
-                                Status :
+                            <span className="block font-mono tracking-tight py-1">
+                                <span className="font-bold">Status : </span>
                                 <input
                                     // className="text-left basis-2/5"
-                                    className=""
+                                    className="border-green-800 border-1"
                                     type="text"
                                     name="status"
                                     value={updatedData.status}
@@ -99,9 +102,12 @@ const ListTodos = ({update}) => {
                                 />
                             </span>
                             </div>
-                            <div className="md:my-auto border-red-900 border-1">
-                            <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
-                            <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button>
+                            {/* <div className="md:my-auto border-red-900 border-1"> */}
+                            <div className="md:my-auto">
+                            {/* <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button> */}
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{handleUpdate(data.todo_id)}}>Save</button>
+                            {/* <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button> */}
+                            <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={()=>{setEditMode(null)}}>Cancel</button>
                             </div>
                         </div>
                         {/* <hr class="w-3/4 mx-auto h-px bg-gray-200 border-0 dark:bg-gray-700"/> */}
@@ -110,25 +116,30 @@ const ListTodos = ({update}) => {
                     ) : (
                         <>
                         {/* <div className="flex flex-row w-3/4 mx-auto my-4"> */}
-                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4">
+                        {/* <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto border-red-900 border-1 w-72 md:w-3/4"> */}
+                        <div className="md:grid md:grid-cols-2 md:gap-2 mx-auto w-72 md:w-3/4 py-2">
                         
                             {/* <span className="text-left basis-2/5"> */}
-                            <div className="border-red-900 border-1">
-                            <span className="">
-                                Description : {data.description}
+                            {/* <div className="border-red-900 border-1"> */}
+                            <div className="">
+                            <span className="font-mono tracking-tight py-1">
+                                <span className="font-bold">Description : </span>{data.description}
                             </span>
 
-                            <span className="block">
-                                Status : {data.status}
+                            <span className="block font-mono tracking-tight py-1">
+                                <span className="font-bold ">Status : </span>{data.status}
                             </span>
                             </div>
 
-                            <div className="md:my-auto border-red-900 border-1">
+                            {/* <div className="md:my-auto border-red-900 border-1"> */}
+                            <div className="md:my-auto">
 
                                 {/* <button className="inline-block mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button> */}
-                                <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
+                                {/* <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button> */}
+                                <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleEdit(data.todo_id, data.description, data.status)}>Edit</button>
                                 
-                                <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button>
+                                {/* <button className="border-red-900 border-1 mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button> */}
+                                <button className="mx-2 px-4 py-2 bg-green-800 text-white rounded" onClick={() => handleDelete(data.todo_id)}>Delete</button>
                             
                             </div>
                         
